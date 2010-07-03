@@ -1,0 +1,140 @@
+#!/usr/bin/perl
+#######################################################################
+# $Id: dirdiff,v 1.34 2010-02-27 22:00:20 dpchrist Exp $
+#######################################################################
+# uses:
+#----------------------------------------------------------------------
+
+use strict;
+use warnings;
+
+use constant			DEBUG => 0;
+
+use Carp;
+use Data::Dumper;
+use Dpchrist::Debug		qw( :all );
+use Dpchrist::Directory		qw( :all );
+use File::Spec::Functions	qw( :ALL );
+use Getopt::Long;
+use Pod::Usage;
+
+#######################################################################
+# globals:
+#----------------------------------------------------------------------
+
+our $VERSION = sprintf("%d.%03d", q$Revision: 1.34 $ =~ /(\d+)/g);
+
+my $opt = \%Dpchrist::Directory::opt;
+
+my %getoptions_args = (
+    'exclude=s'		=> \$opt->{-exclude},
+    'fat!'		=> \$opt->{-fat},
+    'help|h|?'          => \$opt->{-help},
+    'ignoremtime'	=> \$opt->{-ignoremtime},
+    'ignoresize'	=> \$opt->{-ignoresize},
+    'man'               => \$opt->{-man},
+    'verbose|v'		=> \$opt->{-verbose},
+);
+ 
+#######################################################################
+# main:
+#----------------------------------------------------------------------
+
+{
+    ### process command line options:
+
+    Getopt::Long::Configure("bundling");
+
+    my $r = GetOptions( %getoptions_args );
+
+    if (DEBUG && debug_enabled()) {
+	$Data::Dumper::Sortkeys = 1;
+	$|                      = 1;
+	ddump [$opt, \@ARGV],
+	    [qw(opt   *ARGV)];
+    }
+
+    confess "ERROR processing command line options"
+    unless $r;
+
+    pod2usage(-verbose => 2, -exitval => 0) if $opt->{-man};
+
+    pod2usage(0) if $opt->{-help};
+
+    pod2usage(1) unless @ARGV == 2;
+
+
+    ### do the work:
+
+    $r = dirdiff(canonpath($ARGV[0]), canonpath($ARGV[1]));
+
+    print "$r->{-nfiles} files, ",
+	($opt->{-exclude} ? "$r->{-nexcluded} excluded, " : ''),
+	"$r->{-ndirs} directories, ",
+	"$r->{-ndifferences} differences, and ",
+	"$r->{-nerrors} errors\n";
+}
+
+#######################################################################
+# end of code:
+#----------------------------------------------------------------------
+
+__END__
+
+#######################################################################
+
+=head1 NAME
+
+dirdiff - compare two directory trees
+
+
+=head1 SYNOPSIS
+
+    dirdiff [options] DIR1 DIR2
+
+    Options:
+	--exlude        Filenames to exclude (glob syntax)
+	--fat           3 second time resolution for FAT and FAT32
+	--help, -h, -?  Print a brief help message and exit
+	--ignoremtime   Ignore file modification times
+	--ignoresize    Ignore file sizes
+	--man           Print the manual page and exit
+	--verbose, -v   Print informational messages
+
+
+=head1 DESCRIPTION
+
+Command-line interface to Dpchrist::Directory::dirdiff().
+
+
+=head1 SEE ALSO
+
+    Dpchrist::Directory
+
+
+=head1 AUTHOR
+
+David Paul Christensen dpchrist@holgerdanske.com
+
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2010 by David Paul Chirstensen dpchrist@holgerdanske.com
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; version 2.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307,
+USA.
+
+=cut
+
+#######################################################################
