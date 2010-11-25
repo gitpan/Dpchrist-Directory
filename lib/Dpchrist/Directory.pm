@@ -1,12 +1,11 @@
 #######################################################################
-# $Id: Directory.pm,v 1.9 2010-02-27 21:51:13 dpchrist Exp $
+# $Id: Directory.pm,v 1.10 2010-11-25 02:19:25 dpchrist Exp $
 #######################################################################
 # package:
 #----------------------------------------------------------------------
 
 package Dpchrist::Directory;
 
-use 5.010000;
 use strict;
 use warnings;
 
@@ -22,7 +21,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = sprintf("%d.%03d", q$Revision: 1.9 $ =~ /(\d+)/g);
+our $VERSION = sprintf("%d.%03d", q$Revision: 1.10 $ =~ /(\d+)/g);
 
 #######################################################################
 # uses:
