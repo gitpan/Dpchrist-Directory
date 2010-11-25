@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Dpchrist-Directory
-version:            1.010
+version:            1.011
 abstract:           utility subroutines for directories
 author:
     - David Paul Christensen <dpchrist@holgerdanske.com>
@@ -11,8 +11,8 @@ configure_requires:
 build_requires:
     ExtUtils::MakeMaker:  0
 requires:
-    Dpchrist::Debug:   1.036
-    Dpchrist::Module:  1.016
+    Dpchrist::Debug:   1.041
+    Dpchrist::Module:  1.021
     feature:           0
 no_index:
     directory:

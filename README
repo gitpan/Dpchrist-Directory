@@ -1,0 +1,82 @@
+NAME
+    Dpchrist::Directory - utility subroutines for directories
+
+DESCRIPTION
+    This documentation describes module revision $Revision: 1.11 $.
+
+    This is alpha test level software and may change or disappear at any
+    time.
+
+  SUBROUTINES
+   dirdiff
+        dirdiff DIR1,DIR2
+
+    Recursively compares two directories DIR1 and DIR2, printing messages as
+    differences are found, and returns a hash reference with statistics:
+
+        {
+            -ndifferences   => 0,   # number of differences
+            -ndirs          => 0,   # number of directories
+            -nerrors        => 0,   # number of errors
+            -nexcluded      => 0,   # number of items excluded
+            -nfiles         => 0,   # number of files
+        }
+
+    Options may be set via %Dpchrist::Directory::opt:
+
+    -exclude => GLOBSPEC
+            Skip files and/or directories matching GLOBSPEC.
+
+    -fat => BOOL
+            Use a delta time of 3 seconds when comparing file mtime's
+            (for FAT filesystems).
+
+    -ignoremtime => BOOL
+            Ignore mtime when comparing files.
+
+    -ignoresize => BOOL
+            Ignore size when comparing files.
+
+    -verbose => BOOL
+            Print extra information during operation.
+
+    Calls Carp::confess() on fatal errors.
+
+  EXPORT
+    None by default.
+
+    All of the subroutines may be imported by using the ':all' tag:
+
+        use Dpchrist::Debug         qw( :all );
+
+    See 'perldoc Export' for everything in between.
+
+INSTALLATION
+        perl Makefile.PL
+        make
+        make test
+        make install
+
+DEPENDENCIES
+        Dpchirst::Debug
+        Dpchrist::Module
+
+AUTHOR
+    David Paul Christensen dpchrist@holgerdanske.com
+
+COPYRIGHT AND LICENSE
+    Copyright 2010 by David Paul Christensen dpchrist@holgerdanske.com
+
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by the
+    Free Software Foundation; version 2.
+
+    This program is distributed in the hope that it will be useful, but
+    WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+    Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
+

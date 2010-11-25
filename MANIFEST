@@ -1,6 +1,7 @@
 LICENSE
-Makefile.PL
 MANIFEST
+README
+Makefile.PL
 bin/dirdiff
 lib/Dpchrist/Directory.pm
 t/0_compile_modules.t
