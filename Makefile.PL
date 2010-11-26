@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: Makefile.PL,v 1.7 2010-11-25 20:13:56 dpchrist Exp $
+# $Id: Makefile.PL,v 1.8 2010-11-26 20:55:10 dpchrist Exp $
 #
 # Copyright 2010 by David Paul Christensen dpchrist@holgerdanske.com
 #
@@ -26,7 +26,7 @@ use Dpchrist::Module::MakefilePL (
 	lib/Dpchrist/Directory.pm
 	bin/dirdiff
     ) ],
-    -readme	 	=> qw(lib/Dpchrist/Directory.pm),
+    -readme	 	=> 'lib/Dpchrist/Directory.pm',
     -release		=> $ENV{RELEASE_ROOT},
 );
 
@@ -34,8 +34,8 @@ WriteMakefile(
     NAME		=> 'Dpchrist::Directory',
     VERSION_FROM	=> 'lib/Dpchrist/Directory.pm',
     PREREQ_PM		=> {
-	'Dpchrist::Debug'	=> 1.041,
-	'Dpchrist::Module'	=> 1.021,
+	'Dpchrist::Debug'	=> 1.042,
+	'Dpchrist::Module'	=> 1.023,
 	'feature'		=> 0,
     },
     ABSTRACT_FROM	=> 'lib/Dpchrist/Directory.pm',
