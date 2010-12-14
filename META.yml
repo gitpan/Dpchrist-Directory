@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Dpchrist-Directory
-version:            1.017
+version:            1.018
 abstract:           utility subroutines for directories
 author:
     - David Paul Christensen <dpchrist@holgerdanske.com>

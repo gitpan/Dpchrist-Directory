@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: Directory.pm,v 1.17 2010-12-13 03:11:38 dpchrist Exp $
+# $Id: Directory.pm,v 1.18 2010-12-14 15:50:28 dpchrist Exp $
 #######################################################################
 # package:
 #----------------------------------------------------------------------
@@ -21,7 +21,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = sprintf("%d.%03d", q$Revision: 1.17 $ =~ /(\d+)/g);
+our $VERSION = sprintf("%d.%03d", q$Revision: 1.18 $ =~ /(\d+)/g);
 
 #######################################################################
 # uses:
@@ -50,7 +50,7 @@ Dpchrist::Directory - utility subroutines for directories
 
 =head1 DESCRIPTION
 
-This documentation describes module revision $Revision: 1.17 $.
+This documentation describes module revision $Revision: 1.18 $.
 
 
 This is alpha test level software
@@ -333,7 +333,7 @@ None by default.
 
 All of the subroutines may be imported by using the ':all' tag:
 
-    use Dpchrist::Debug		qw( :all );
+    use Dpchrist::Directory	qw( :all );
 
 
 =head1 INSTALLATION
@@ -347,7 +347,7 @@ Old school:
 
 Minimal:
 
-    $ cpan Dpchrist::Debug
+    $ cpan Dpchrist::Directory
 
 Complete:
 

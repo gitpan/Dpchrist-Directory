@@ -2,7 +2,7 @@ NAME
     Dpchrist::Directory - utility subroutines for directories
 
 DESCRIPTION
-    This documentation describes module revision $Revision: 1.17 $.
+    This documentation describes module revision $Revision: 1.18 $.
 
     This is alpha test level software and may change or disappear at any
     time.
@@ -47,7 +47,7 @@ DESCRIPTION
 
     All of the subroutines may be imported by using the ':all' tag:
 
-        use Dpchrist::Debug         qw( :all );
+        use Dpchrist::Directory     qw( :all );
 
 INSTALLATION
     Old school:
@@ -59,7 +59,7 @@ INSTALLATION
 
     Minimal:
 
-        $ cpan Dpchrist::Debug
+        $ cpan Dpchrist::Directory
 
     Complete:
 
