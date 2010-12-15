@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: Makefile.PL,v 1.15 2010-12-14 15:50:28 dpchrist Exp $
+# $Id: Makefile.PL,v 1.16 2010-12-15 01:23:33 dpchrist Exp $
 #
 # Copyright 2010 by David Paul Christensen dpchrist@holgerdanske.com
 #
@@ -51,7 +51,7 @@ WriteMakefile(
     PREREQ_PM		=> {
 	Carp			=> 1.08,
 	Data::Dumper		=> 2.121_14,
-	Dpchrist::Debug		=> 1.048,
+	Dpchrist::Debug		=> 1.049,
 	Exporter		=> 5.62,
 	ExtUtils::MakeMaker	=> 6.54,
 	File::Spec::Functions	=> 3.2501,

@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: Directory.pm,v 1.18 2010-12-14 15:50:28 dpchrist Exp $
+# $Id: Directory.pm,v 1.19 2010-12-15 01:23:33 dpchrist Exp $
 #######################################################################
 # package:
 #----------------------------------------------------------------------
@@ -21,7 +21,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = sprintf("%d.%03d", q$Revision: 1.18 $ =~ /(\d+)/g);
+our $VERSION = sprintf("%d.%03d", q$Revision: 1.19 $ =~ /(\d+)/g);
 
 #######################################################################
 # uses:
@@ -50,7 +50,7 @@ Dpchrist::Directory - utility subroutines for directories
 
 =head1 DESCRIPTION
 
-This documentation describes module revision $Revision: 1.18 $.
+This documentation describes module revision $Revision: 1.19 $.
 
 
 This is alpha test level software

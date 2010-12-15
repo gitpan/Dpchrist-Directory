@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Dpchrist-Directory
-version:            1.018
+version:            1.019
 abstract:           utility subroutines for directories
 author:
     - David Paul Christensen <dpchrist@holgerdanske.com>
@@ -13,7 +13,7 @@ build_requires:
 requires:
     Carp:                 1.08
     Data::Dumper:         2.12114
-    Dpchrist::Debug:      1.048
+    Dpchrist::Debug:      1.049
     Exporter:             5.62
     ExtUtils::MakeMaker:  6.54
     File::Spec::Functions:  3.2501
