@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: Makefile.PL,v 1.16 2010-12-15 01:23:33 dpchrist Exp $
+# $Id: Makefile.PL,v 1.18 2010-12-21 04:13:24 dpchrist Exp $
 #
 # Copyright 2010 by David Paul Christensen dpchrist@holgerdanske.com
 #
@@ -28,7 +28,7 @@ warn $@ if $@;
 eval {
     require Dpchrist::ExtUtils::MakeMaker;
     die 'Skipping Dpchrist::ExtUtils::MakeMaker'
-    	unless 1.023 <= $Dpchrist::ExtUtils::MakeMaker::VERSION;
+    	unless 1.027 <= $Dpchrist::ExtUtils::MakeMaker::VERSION;
     import  Dpchrist::ExtUtils::MakeMaker (
 	postamble => sub {
 	    my ($o, $prev) = @_;
@@ -51,7 +51,7 @@ WriteMakefile(
     PREREQ_PM		=> {
 	Carp			=> 1.08,
 	Data::Dumper		=> 2.121_14,
-	Dpchrist::Debug		=> 1.049,
+	Dpchrist::Debug		=> 1.050,
 	Exporter		=> 5.62,
 	ExtUtils::MakeMaker	=> 6.54,
 	File::Spec::Functions	=> 3.2501,
